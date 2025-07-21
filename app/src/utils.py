@@ -60,7 +60,7 @@ def add_to_faiss(faiss_db, docs, embeddings):
 # ベクトル化しておいた、FAISSを取得
 def pull_from_faiss(embeddings, faiss_db_dir="vector_store"):
     vectorstore = FAISS.load_local(faiss_db_dir, embeddings, allow_dangerous_deserialization=True)
-    retriever = vectorstore.as_retriever()
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
     return retriever
 
 # 履歴と新しい質問から履歴を反映した質問を生成

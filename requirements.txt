@@ -101,14 +101,19 @@ langchain==0.2.14
     #   -r app/requirements.in
     #   langchain-community
 langchain-community==0.2.12
-    # via -r app/requirements.in
+    # via
+    #   -r app/requirements.in
+    #   langchain-experimental
 langchain-core==0.2.32
     # via
     #   -r app/requirements.in
     #   langchain
     #   langchain-community
+    #   langchain-experimental
     #   langchain-openai
     #   langchain-text-splitters
+langchain-experimental==0.0.64
+    # via -r app/requirements.in
 langchain-openai==0.1.19
     # via -r app/requirements.in
 langchain-text-splitters==0.2.2

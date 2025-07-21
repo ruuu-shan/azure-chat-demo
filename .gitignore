@@ -13,3 +13,4 @@ venv/
 vector_store/
 /notebooks/db
 
+*.csv

@@ -1,25 +1,52 @@
+## 参照
+ - [Advanced RAG](https://github.com/langchain-ai/rag-from-scratch)
+ - [Graph RAG](https://blog.langchain.dev/enhancing-rag-based-applications-accuracy-by-constructing-and-leveraging-knowledge-graphs/)
+ - [neo4j](https://neo4j.com/product/auradb/)
+
+### Graph構造のデータ
+データの例
+```mermaid
+graph TD;
+    A((ユーザーA)) -->|友人| B((ユーザーB));
+    A -->|フォロー| C((ユーザーC));
+    B -->|友人| D((ユーザーD));
+    C -->|友人| D;
+    C -->|フォロー| E((ユーザーE));
+    D -->|友人| A;
+```
+検索例
+```cypher
+// ユーザーAの友人関係にある人物の名前を取得します。PersonノードとFRIENDリレーションシップを使用して、友人関係にあるノードを検索しています。
+MATCH (a:Person)-[r:FRIEND]->(b:Person)
+WHERE a.name = 'ユーザーA'
+RETURN b.name AS Friend
+```
+検索結果
+```mermaid
+graph TD;
+    A((ユーザーA)) -->|友人| B((ユーザーB));
+    D((ユーザーD)) -->|友人| A;
+```
+活用用途
+ - 複雑なクエリの処理：Graphデータはノードとエッジで構成されており、複雑な関係性を持つデータを効率的に検索できます。これにより、複雑なクエリに対しても高精度な応答が可能です。
+ - ドメイン特化型の検索：特定のドメインに特化したデータベースを構築することで、その分野に関する専門的な知識を持つ応答を生成できます。例えば、医療、法律、技術などの分野で有用です。
+
+
 # ChatGPT + Your Data with Azure OpenAI
-本講座では、ChatGPTと自分のデータを使ってオリジナルのチャットシステムを作る講座です。
+
+
 
 ## リスト
 
-- [ChatGPT + Your Data with Azure OpenAI](#chatgpt--your-data-with-azure-openai)
-  - [リスト](#リスト)
-  - [準備](#準備)
-    - [VS Code Install](#vs-code-install)
-    - [Docker Install](#docker-install)
-    - [Git Install](#git-install)
-    - [Github　アカウント作成](#githubアカウント作成)
-    - [Azure アカウント作成](#azure-アカウント作成)
-    - [Azureの構成](#azureの構成)
-    - [OpenAIのキーの発行手順](#openaiのキーの発行手順)
-  - [本講座のコード](#本講座のコード)
-    - [コードの構成](#コードの構成)
-    - [チャットシステムの起動確認](#チャットシステムの起動確認)
-    - [ライブラリのインストール](#ライブラリのインストール)
-    - [Azure App Serviceに設定する環境変数](#azure-app-serviceに設定する環境変数)
-    - [Azure App Serviceのスタートアップコマンド](#azure-app-serviceのスタートアップコマンド)
-    - [Azure App Serviceに認証追加後のスタートアップコマンド](#azure-app-serviceに認証追加後のスタートアップコマンド)
+- [準備](#準備)
+  - [VS Code Install](#vs-code-install)
+  - [Docker Install](#docker-install)
+  - [Git Install](#git-install)
+  - [Azure アカウント作成](#azure-アカウント作成)
+
+- [本講座のコード](#本講座のコード)
+  - [コードの構成](#コードの構成)
+  - [チャットシステムの起動確認](#チャットシステムの起動確認)
 
 ## 準備
 ### VS Code Install

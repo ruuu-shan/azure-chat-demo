@@ -10,7 +10,8 @@
             "extensions": [
                 "ms-python.debugpy", //ExtentionIDをCopyして貼り付け
                 "ms-python.python",
-                "ms-toolsai.jupyter"
+                "ms-toolsai.jupyter",
+                "bierner.markdown-mermaid"
             ]
         }
     }

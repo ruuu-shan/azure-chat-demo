@@ -101,14 +101,19 @@ langchain==0.2.14
     #   -r app/requirements.in
     #   langchain-community
 langchain-community==0.2.12
-    # via -r app/requirements.in
+    # via
+    #   -r app/requirements.in
+    #   langchain-experimental
 langchain-core==0.2.32
     # via
     #   -r app/requirements.in
     #   langchain
     #   langchain-community
+    #   langchain-experimental
     #   langchain-openai
     #   langchain-text-splitters
+langchain-experimental==0.0.64
+    # via -r app/requirements.in
 langchain-openai==0.1.19
     # via -r app/requirements.in
 langchain-text-splitters==0.2.2
@@ -136,6 +141,8 @@ mypy-extensions==1.0.0
     # via typing-inspect
 narwhals==1.6.4
     # via altair
+neo4j==5.27.0
+    # via -r app/requirements.in
 nest-asyncio==1.6.0
     # via -r app/requirements.in
 numpy==1.26.4
@@ -194,7 +201,9 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
     # via -r app/requirements.in
 pytz==2024.1
-    # via pandas
+    # via
+    #   neo4j
+    #   pandas
 pyyaml==6.0.2
     # via
     #   langchain

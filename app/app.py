@@ -85,7 +85,8 @@ def main():
         print(user_msg, "=>", new_msg)
 
         # 類似ドキュメントを取得
-        relavant_docs = retriever.invoke(new_msg, k=3)
+        # ドキュメント数の調整はretriever取得時に設定
+        relavant_docs = retriever.invoke(new_msg)
 
         # 質問の回答を表示 
         # response = chain.invoke({"chat_history": st.session_state.chat_log, "context": relavant_docs, "input": new_msg})
