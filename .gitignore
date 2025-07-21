@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.DS_Store
+.vscode/
+.cursorrules
 
 # Environments
 .env
@@ -9,3 +12,4 @@ venv/
 
 vector_store/
 /notebooks/db
+

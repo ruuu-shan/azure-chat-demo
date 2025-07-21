@@ -1,17 +1,25 @@
 # ChatGPT + Your Data with Azure OpenAI
-本講座では、ChatGPTと自分のデータを使ってオリジナルのチャットシステムを作る講座です。  
+本講座では、ChatGPTと自分のデータを使ってオリジナルのチャットシステムを作る講座です。
 
 ## リスト
 
-- [準備](#準備)
-  - [VS Code Install](#vs-code-install)
-  - [Docker Install](#docker-install)
-  - [Git Install](#git-install)
-  - [Azure アカウント作成](#azure-アカウント作成)
-
-- [本講座のコード](#本講座のコード)
-  - [コードの構成](#コードの構成)
-  - [チャットシステムの起動確認](#チャットシステムの起動確認)
+- [ChatGPT + Your Data with Azure OpenAI](#chatgpt--your-data-with-azure-openai)
+  - [リスト](#リスト)
+  - [準備](#準備)
+    - [VS Code Install](#vs-code-install)
+    - [Docker Install](#docker-install)
+    - [Git Install](#git-install)
+    - [Github　アカウント作成](#githubアカウント作成)
+    - [Azure アカウント作成](#azure-アカウント作成)
+    - [Azureの構成](#azureの構成)
+    - [OpenAIのキーの発行手順](#openaiのキーの発行手順)
+  - [本講座のコード](#本講座のコード)
+    - [コードの構成](#コードの構成)
+    - [チャットシステムの起動確認](#チャットシステムの起動確認)
+    - [ライブラリのインストール](#ライブラリのインストール)
+    - [Azure App Serviceに設定する環境変数](#azure-app-serviceに設定する環境変数)
+    - [Azure App Serviceのスタートアップコマンド](#azure-app-serviceのスタートアップコマンド)
+    - [Azure App Serviceに認証追加後のスタートアップコマンド](#azure-app-serviceに認証追加後のスタートアップコマンド)
 
 ## 準備
 ### VS Code Install
